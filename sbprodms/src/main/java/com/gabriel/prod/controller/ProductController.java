@@ -60,7 +60,6 @@ public class ProductController {
         try {
             Product newProduct = productService.update(product);
 
-            // FIXED: Changed from 'product' to 'newProduct' to send the updated database payload data back to JavaFX
             response = ResponseEntity.ok(newProduct);
         }
         catch( Exception ex)

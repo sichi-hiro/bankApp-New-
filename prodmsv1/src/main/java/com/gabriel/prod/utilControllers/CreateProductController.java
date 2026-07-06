@@ -35,7 +35,6 @@ public class CreateProductController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("CreateProductController: initialize");
         try {
-            // Populate the dropdown with your newly updated PHP & USD currency profiles
             Uom[] uoms = (Uom[]) UomService.getService().getUoms();
             cbUom.getItems().clear();
             cbUom.getItems().addAll(uoms);
@@ -50,22 +49,18 @@ public class CreateProductController implements Initializable {
         product.setName(tfName.getText().trim());
         product.setDescription("Active Banking Account");
 
-        // DYNAMIC FIX: Capture what the admin actually highlighted in the currency list combo box!
         Uom selectedUom = cbUom.getSelectionModel().getSelectedItem();
         if (selectedUom != null) {
             product.setUomId(selectedUom.getId());
             product.setUomName(selectedUom.getName());
         } else {
-            // Fallback safety settings to catch the entry we updated in Postman (ID #1)
             product.setUomId(1);
             product.setUomName("PHP (Philippine Peso)");
         }
 
         try {
-            // Send request payload out to your Spring service backend repository layer
             product = productService.create(product);
 
-            // Force the main dashboard view container to refresh its directory list frame rows
             if (prodManController != null) {
                 prodManController.refresh();
             }

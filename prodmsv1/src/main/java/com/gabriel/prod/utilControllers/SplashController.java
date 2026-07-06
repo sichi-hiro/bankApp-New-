@@ -40,11 +40,10 @@ public class SplashController implements Initializable {
         System.out.println("SplashApp: Navigating to Role Selection Portal");
         Node node = ((Node) (actionEvent.getSource()));
         Window window = node.getScene().getWindow();
-        Stage currentStage = (Stage) window; // Safely capture the active window stage
+        Stage currentStage = (Stage) window;
         window.hide();
 
         try {
-            // This works exactly like your old code, but uses the local class to find the file!
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("role-selection.fxml"));
             Parent root = (Parent) fxmlLoader.load();
 

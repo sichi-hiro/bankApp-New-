@@ -29,7 +29,6 @@ public class DeleteProductController {
         try {
             Product target = ProdManController.product;
             if (target != null) {
-                // Fire delete method out to server repo connection
                 ProductService.getService().delete(target.getId());
                 controller.refresh();
                 controller.clearControlTexts();

@@ -13,7 +13,6 @@ public class SplashApp extends Application {
     public void start(Stage stage) throws IOException {
         System.out.println("SplashApp: Booting System Entry Point");
 
-        // Load the Role Selection Portal immediately on program start
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("role-selection.fxml"));
         Parent root = fxmlLoader.load();
 

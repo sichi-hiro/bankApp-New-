@@ -16,7 +16,6 @@
     <center>
         <StackPane BorderPane.alignment="CENTER">
             <children>
-                <!-- FIXED: Removed -fx-border-color and -fx-border-radius to completely erase the orange line box outline -->
                 <VBox alignment="TOP_CENTER" maxWidth="500.0" spacing="25.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
                     <padding>
                         <Insets bottom="40.0" left="30.0" right="30.0" top="40.0" />

@@ -31,7 +31,6 @@ public class CustomerController implements Initializable {
         updateBalanceDisplay();
     }
 
-    // Functionality 1: Balance Inquiry (Helper to keep the display perfectly synced)
     private void updateBalanceDisplay() {
         if (ProdManController.product != null) {
             lblBalance.setText(String.format("₱ %,.2f", (double) ProdManController.product.getBalance()));
@@ -40,8 +39,6 @@ public class CustomerController implements Initializable {
         }
     }
 
-    // Functionality 2: Deposit handling operation loop
-    // Replace the core transaction blocks inside CustomerController.java with these:
 
     @FXML
     public void onDeposit(ActionEvent event) {
@@ -57,11 +54,9 @@ public class CustomerController implements Initializable {
                 return;
             }
 
-            // Add directly to the model instance variable
             int currentBalance = ProdManController.product.getBalance();
             ProdManController.product.setBalance(currentBalance + (int) amount);
 
-            // Commit transaction data downstream to the local storage wrapper service
             ProductService.getService().update(ProdManController.product);
 
             updateBalanceDisplay();
@@ -95,10 +90,8 @@ public class CustomerController implements Initializable {
                 return;
             }
 
-            // Deduct from the live instance variable
             ProdManController.product.setBalance(currentBalance - (int) amount);
 
-            // Commit transaction data downstream
             ProductService.getService().update(ProdManController.product);
 
             updateBalanceDisplay();
@@ -112,7 +105,6 @@ public class CustomerController implements Initializable {
         }
     }
 
-    // Navigation Session Exit: Returns back to the Role Selection Panel
     @FXML
     public void onLogout(ActionEvent event) {
         try {
@@ -131,7 +123,6 @@ public class CustomerController implements Initializable {
                 scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
             }
 
-            // FIXED TEXT: Updated naming constraint to modern universal tag
             stage.setTitle("Banking App - Role Selection Portal");
             stage.setScene(scene);
             stage.show();
@@ -141,7 +132,6 @@ public class CustomerController implements Initializable {
         }
     }
 
-    // Global alert template helper method
     private void showNotification(Alert.AlertType type, String title, String message) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-    Generated Template Modified by Chloie Broñola
-    Theme Context: Clean Modern Teal Financial Interface (Customer Gateway)
--->
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<!-- FIXED: Outer background color changed from pink to clean ice-blue #f4f7f9 -->
 <BorderPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #f4f7f9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.CustomerLoginController">
 
     <top>
-        <!-- FIXED: Banner background shifted from magenta to brand Deep Teal #1b6b80 -->
         <VBox alignment="CENTER" prefHeight="120.0" style="-fx-background-color: #1b6b80;" BorderPane.alignment="CENTER">
             <children>
-                <!-- FIXED CHANGED TEXT: Replaced outdated branding with "BANKING APP" -->
                 <Label style="-fx-font-size: 26px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANKING APP" />
                 <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Secure Customer Access Gateway" />
             </children>
@@ -45,7 +37,6 @@
                         <HBox alignment="CENTER" spacing="15.0" style="-fx-margin-top: 10px;">
                             <children>
                                 <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#onCancel" prefHeight="38.0" prefWidth="120.0" style="-fx-font-size: 13px;" text="Back" />
-                                <!-- FIXED: Assigned styleClass="button-primary" to cleanly draw background hover rules from splash.css -->
                                 <Button fx:id="btnVerify" styleClass="button-primary" mnemonicParsing="false" onAction="#onVerifyAccount" prefHeight="38.0" prefWidth="160.0" style="-fx-font-size: 13px; -fx-font-weight: bold;" text="Verify Account" />
                             </children>
                         </HBox>

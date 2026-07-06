@@ -26,7 +26,6 @@ public class UpdateProductController implements Initializable {
     @Setter
     ProdManController controller;
 
-    // Fields matched precisely to your FXML layout definition
     @FXML private TextField tfName;
     @FXML private ComboBox<Uom> cbUom;
 
@@ -44,15 +43,12 @@ public class UpdateProductController implements Initializable {
     public void refresh() throws Exception {
         Product product = ProdManController.product;
         if (product != null) {
-            // Fill the input text box with the existing holder name
             tfName.setText(product.getName());
 
-            // Re-fetch clean system currency listings from database server
             cbUom.getItems().clear();
             Uom[] uoms = (Uom[]) UomService.getService().getUoms();
             cbUom.getItems().addAll(uoms);
 
-            // Prefill selection highlight with current profile mapping
             cbUom.getSelectionModel().select(UomService.getService().getUom(product.getUomId()));
         }
     }
@@ -62,9 +58,8 @@ public class UpdateProductController implements Initializable {
         Product target = ProdManController.product;
         if (target == null) return;
 
-        // Set values on the active model target
         target.setName(tfName.getText().trim());
-        target.setDescription("Active Banking Account"); // Match our hidden template rule smoothly
+        target.setDescription("Active Banking Account");
 
         Uom uom = cbUom.getSelectionModel().getSelectedItem();
         if (uom != null) {
@@ -73,10 +68,8 @@ public class UpdateProductController implements Initializable {
         }
 
         try {
-            // FIXED LINE: Matches your exact single-argument template service pattern
             target = ProductService.getService().update(target);
 
-            // Refresh administration directory view updates
             controller.refresh();
             controller.setControlTexts(target);
             onBack(actionEvent);

@@ -41,7 +41,6 @@ public class ProdManController implements Initializable {
     public BorderPane prodman;
     public TextField tfUom;
 
-    // JavaFX injection mapping for the new balance layout field
     public TextField tfBalance;
 
     Image puffy;
@@ -98,7 +97,6 @@ public class ProdManController implements Initializable {
         tfName.editableProperty().set(false);
         tfDesc.editableProperty().set(false);
         tfUom.editableProperty().set(false);
-        // Make the new balance text box read-only for system administrators
         tfBalance.editableProperty().set(false);
     }
 
@@ -106,7 +104,6 @@ public class ProdManController implements Initializable {
         tfName.setText(product.getName());
         tfDesc.setText(product.getDescription());
         tfUom.setText(product.getUomName());
-        // Format and display the true underlying numeric value from model schema
         tfBalance.setText(Integer.toString(product.getBalance()));
     }
 
@@ -126,14 +123,11 @@ public class ProdManController implements Initializable {
         }
 
         try {
-            // 1. Force the built-in refresh layout pipeline pass
             refresh();
 
-            // 2. Locate the fresh account instance inside the reloaded array mapping
             for (Product account : lvProducts.getItems()) {
                 if (account.getId() == selectedItem.getId()) {
                     product = account;
-                    // Force sync the static tracker so Customer side can see the update!
                     ProdManController.product = account;
                     break;
                 }

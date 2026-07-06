@@ -71,11 +71,9 @@
                                 <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;" text="Account Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                                 <TextField fx:id="tfDesc" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                                <!-- UPDATED: Relabeled to accurately reflect Currency Profile (PHP) -->
                                 <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;" text="Currency Profile:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                                 <TextField fx:id="tfUom" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                                <!-- NEW ROW: Dedicated field for the true numeric transaction balance -->
                                 <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;" text="Account Balance (₱):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                                 <TextField fx:id="tfBalance" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                             </children>

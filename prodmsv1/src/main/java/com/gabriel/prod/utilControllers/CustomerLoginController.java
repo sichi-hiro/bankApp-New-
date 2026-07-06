@@ -50,8 +50,6 @@ public class CustomerLoginController {
             if (matchedAccount != null) {
                 System.out.println("Access Granted! Found Account Holder: " + matchedAccount.getName());
 
-                // THE CRUCIAL LINK: Store the matched account in the static variable
-                // so CustomerController knows who is actively performing transactions!
                 ProdManController.product = matchedAccount;
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customer-view.fxml"));
@@ -62,7 +60,6 @@ public class CustomerLoginController {
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                // FIXED BRANDING: Updated layout window tracking string
                 stage.setTitle("Banking App - Customer: " + matchedAccount.getName() + " (#" + lookupId + ")");
                 stage.setScene(scene);
                 stage.show();
@@ -88,7 +85,6 @@ public class CustomerLoginController {
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // FIXED BRANDING: Standardized header title
             stage.setTitle("Banking App - Access Portal");
             stage.setScene(scene);
             stage.show();
