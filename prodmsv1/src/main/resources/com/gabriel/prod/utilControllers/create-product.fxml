@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: #f4f7f9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.CreateProductController">
+
+    <top>
+        <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #1b6b80;" BorderPane.alignment="CENTER">
+            <children>
+                <Label style="-fx-font-size: 24px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANKING APP" />
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Administrative Registry - Open New Customer Account" />
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" maxWidth="500.0" spacing="25.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #e9ecef; -fx-border-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
+                    <padding>
+                        <Insets bottom="35.0" left="30.0" right="30.0" top="35.0" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #495057;" text="Account Registration Dossier" />
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #6c757d;" text="ACCOUNT HOLDER FULL NAME" />
+                                <TextField fx:id="tfName" prefHeight="38.0" promptText="e.g., Juan Dela Cruz" style="-fx-font-size: 14px;" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #6c757d;" text="ACCOUNT CURRENCY SYSTEM STRUCTURE (UOM)" />
+                                <ComboBox fx:id="cbUom" prefHeight="38.0" prefWidth="440.0" promptText="Select Currency Profile..." style="-fx-font-size: 14px;" />
+                            </children>
+                        </VBox>
+
+                        <HBox alignment="CENTER" spacing="15.0" style="-fx-margin-top: 15px;">
+                            <children>
+                                <Button fx:id="btnNext" mnemonicParsing="false" onAction="#onBack" prefHeight="40.0" prefWidth="120.0" style="-fx-font-size: 13px;" text="Cancel" />
+                                <Button fx:id="btnSubmit" styleClass="button-primary" mnemonicParsing="false" onAction="#onSubmit" prefHeight="40.0" prefWidth="180.0" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-background-color: #1b6b80; -fx-text-fill: white; -fx-background-radius: 4px;" text="Register &amp; Open Account" />
+                            </children>
+                        </HBox>
+
+                    </children>
+                </VBox>
+            </children>
+            <StackPane.margin>
+                <Insets top="30.0" />
+            </StackPane.margin>
+        </StackPane>
+    </center>
+</BorderPane>

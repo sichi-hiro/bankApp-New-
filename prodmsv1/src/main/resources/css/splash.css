@@ -1,0 +1,75 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* --- TEXT FIELDS --- */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px 10px;
+}
+
+.text-field:focused {
+    /* CHANGED: Swapped out pink focus border for the brand Deep Teal */
+    -fx-border-color: #1b6b80;
+}
+
+/* --- TEXT AREAS --- */
+.text-area {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.text-area .viewport,
+.text-area .content {
+    -fx-background-color: transparent !important;
+}
+
+/* --- BASE/CANCEL BUTTONS --- */
+.button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #495057;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    /* CHANGED: Swapped out pink text and background for modern soft teal accents */
+    -fx-background-color: #e8f2f5;
+    -fx-border-color: #1b6b80;
+    -fx-text-fill: #1b6b80;
+}
+
+/* --- TOP MENU NAVIGATION BAR --- */
+.menu-bar {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #495057;
+    -fx-font-size: 12px;
+}
+
+.menu .menu-item:hover,
+.menu:hover {
+    /* CHANGED: Swapped drop list hovering styles from pink to premium brand teal */
+    -fx-background-color: #e8f2f5;
+    -fx-text-fill: #1b6b80;
+}
+
+/* --- DROPDOWN CONTEXT MENUS --- */
+.context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dee2e6;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}

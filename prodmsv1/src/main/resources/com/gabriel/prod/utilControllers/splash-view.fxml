@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="720.0" style="-fx-background-color: #f5ebeb;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.SplashController">
+
+    <top>
+        <VBox alignment="CENTER" prefHeight="220.0" style="-fx-background-color: #c2255c; -fx-padding: 30px 20px 0px 20px;" BorderPane.alignment="CENTER">
+            <children>
+                <Label style="-fx-font-size: 32px; -fx-font-weight: 900; -fx-text-fill: #ffffff; -fx-letter-spacing: 1px;" text="APEX TRUST BANK" />
+                <Label style="-fx-font-size: 14px; -fx-text-fill: #fff0f6; -fx-margin-top: 5px;" text="Secure. Reliable. Innovative Corporate Systems." />
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" maxWidth="500.0" spacing="20.0">
+                    <children>
+
+                        <VBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0">
+                            <VBox.margin>
+                                <Insets top="-40.0" />
+                            </VBox.margin>
+                        </VBox>
+
+                        <VBox style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #e9ecef; -fx-border-width: 1px; -fx-border-radius: 8px;" VBox.vgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                            </padding>
+                            <children>
+                                <TextArea fx:id="textArea" editable="false" focusTraversable="false" mouseTransparent="true" prefHeight="120.0" style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0; -fx-text-fill: #495057; -fx-font-size: 15px; -fx-font-weight: normal; -fx-alignment: center;" text="Welcome to the Apex Trust Security Access Terminal. This unified platform houses the Administrative Account Registry Console and the Customer Transaction Portals for complete client account service management." wrapText="true" />
+                            </children>
+                        </VBox>
+
+                        <HBox alignment="CENTER" prefHeight="60.0">
+                            <children>
+                                <Button fx:id="btnProceed" mnemonicParsing="false" onAction="#onProceed" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Get Started" />
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

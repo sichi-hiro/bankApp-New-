@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- FIXED: Outer layout background color changed from pink to clean ice-blue #f4f7f9 -->
+<VBox prefHeight="450.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #f4f7f9;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.CustomerController">
+    <padding>
+        <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+    </padding>
+    <children>
+
+        <!-- FIXED: Banner shifted from magenta to brand Deep Teal #1b6b80 -->
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: #1b6b80; -fx-padding: 15px; -fx-background-radius: 8px;">
+            <children>
+                <VBox>
+                    <children>
+                        <!-- FIXED CHANGED TEXT: Replaced outdated branding placeholder with "BANKING APP" -->
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="BANKING APP" />
+                        <Label style="-fx-font-size: 12px; -fx-text-fill: #e8f2f5;" text="Customer Transaction Terminal" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #e9ecef; -fx-border-radius: 8px;">
+            <children>
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #6c757d; -fx-font-weight: bold;" text="AVAILABLE ACCOUNT BALANCE" />
+                <!-- FIXED: Text fill shifted from magenta to brand Deep Teal #1b6b80 -->
+                <Label fx:id="lblBalance" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1b6b80;" text="₱ 0.00">
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+
+        <VBox spacing="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #e9ecef; -fx-border-radius: 8px; -fx-padding: 20px;" VBox.vgrow="ALWAYS">
+            <children>
+                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #495057;" text="Perform Transaction" />
+
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label minWidth="110.0" style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Amount (₱):" />
+                        <TextField fx:id="tfAmount" promptText="Enter amount here..." HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <!-- ADDED: styleClass="button-primary" to link transaction actions seamlessly to splash.css styles -->
+                        <Button fx:id="btnDeposit" styleClass="button-primary" mnemonicParsing="false" onAction="#onDeposit" prefHeight="35.0" prefWidth="140.0" style="-fx-font-weight: bold;" text="📥 Deposit" />
+                        <Button fx:id="btnWithdraw" styleClass="button-primary" mnemonicParsing="false" onAction="#onWithdraw" prefHeight="35.0" prefWidth="140.0" style="-fx-font-weight: bold;" text="📤 Withdraw" />
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT">
+            <children>
+                <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#onLogout" prefWidth="90.0" text="Log Out" />
+            </children>
+        </HBox>
+
+    </children>
+</VBox>

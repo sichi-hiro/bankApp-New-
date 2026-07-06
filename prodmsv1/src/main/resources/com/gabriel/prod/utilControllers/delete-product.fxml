@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: #f4f7f9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.DeleteProductController">
+    <top>
+        <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #1b6b80;" BorderPane.alignment="CENTER">
+            <children>
+                <Label style="-fx-font-size: 24px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANKING APP" />
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Administrative Registry - Closure Authorization" />
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <children>
+                <!-- FIXED: Removed -fx-border-color and -fx-border-radius to completely erase the orange line box outline -->
+                <VBox alignment="TOP_CENTER" maxWidth="500.0" spacing="25.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
+                    <padding>
+                        <Insets bottom="40.0" left="30.0" right="30.0" top="40.0" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #e03131;" text="Confirm Account Closure" />
+
+                        <Label fx:id="lblWarningText" alignment="CENTER" style="-fx-font-size: 14px; -fx-text-fill: #495057;" text="Are you sure you want to completely terminate this account registry record?" textAlignment="CENTER" wrapText="true" />
+
+                        <HBox alignment="CENTER" spacing="15.0" style="-fx-margin-top: 10px;">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#onBack" prefHeight="40.0" prefWidth="120.0" style="-fx-font-size: 13px;" text="Abort" />
+                                <Button mnemonicParsing="false" onAction="#onSubmit" prefHeight="40.0" prefWidth="180.0" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-background-color: #e03131; -fx-text-fill: white; -fx-background-radius: 4px;" text="Confirm Closure" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
