@@ -37,7 +37,6 @@ public class ProductServiceImpl implements ProductService {
             product.setUomId(productData.getUomId());
             product.setUomName(productData.getUomName());
 
-            // FIXED: Map balance from database row to the UI application array
             product.setBalance(productData.getBalance());
 
             products.add(product);
@@ -59,7 +58,6 @@ public class ProductServiceImpl implements ProductService {
         productData.setUomId(product.getUomId());
         productData.setUomName(product.getUomName());
 
-        // FIXED: Map initial registration balances down to the database row structure
         productData.setBalance(product.getBalance());
 
         productData = productDataRepository.save(productData);
@@ -72,7 +70,6 @@ public class ProductServiceImpl implements ProductService {
         newProduct.setUomId(productData.getUomId());
         newProduct.setUomName(productData.getUomName());
 
-        // FIXED: Sync return values
         newProduct.setBalance(productData.getBalance());
         return newProduct;
     }
@@ -86,7 +83,6 @@ public class ProductServiceImpl implements ProductService {
         productData.setUomId(product.getUomId());
         productData.setUomName(product.getUomName());
 
-        // FIXED: Ensure transaction values (deposits/withdrawals) update the database row
         productData.setBalance(product.getBalance());
 
         productData = productDataRepository.save(productData);
@@ -98,7 +94,6 @@ public class ProductServiceImpl implements ProductService {
         newProduct.setUomId(productData.getUomId());
         newProduct.setUomName(productData.getUomName());
 
-        // FIXED: Sync return value updates back to frontend network calls
         newProduct.setBalance(productData.getBalance());
         return newProduct;
     }
@@ -117,7 +112,6 @@ public class ProductServiceImpl implements ProductService {
             product.setUomId(productDatum.getUomId());
             product.setUomName(productDatum.getUomName());
 
-            // FIXED: Map the balance property field during specific profile database inquiries
             product.setBalance(productDatum.getBalance());
             return product;
         }
@@ -141,7 +135,6 @@ public class ProductServiceImpl implements ProductService {
             product.setUomId(optional.get().getUomId());
             product.setUomName(optional.get().getUomName());
 
-            // FIXED: Sync baseline value
             product.setBalance(optional.get().getBalance());
         }
         else {

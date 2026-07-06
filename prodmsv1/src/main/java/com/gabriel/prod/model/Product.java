@@ -11,7 +11,6 @@ public class Product {
     String uomName;
     String photo;
 
-    // THE MISSING LINK: Must be in the frontend's model package folder too!
     int balance;
 
     @Override
