@@ -62,7 +62,7 @@
 
                         <HBox alignment="CENTER_LEFT" spacing="15.0">
                             <children>
-                                <Label minWidth="110.0" style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Amount (₱):" />
+                                <Label minWidth="110.0" style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Amount:" />
                                 <TextField fx:id="tfAmount" promptText="Enter amount here..." HBox.hgrow="ALWAYS" />
                             </children>
                         </HBox>

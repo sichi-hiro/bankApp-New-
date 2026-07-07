@@ -32,9 +32,26 @@ public class CustomerController implements Initializable {
         updateBalanceDisplay();
     }
 
+    private String getCurrencySymbol() {
+        if (ProdManController.product != null) {
+            String currencyProfile = ProdManController.product.getUomName();
+            if (currencyProfile != null) {
+                String profileUpper = currencyProfile.toUpperCase();
+                if (profileUpper.contains("DOLLAR") || profileUpper.contains("USD")) {
+                    return "$";
+                } else if (profileUpper.contains("EURO") || profileUpper.contains("EUR")) {
+                    return "€";
+                } else if (profileUpper.contains("YEN") || profileUpper.contains("JPY")) {
+                    return "¥";
+                }
+            }
+        }
+        return "₱";
+    }
+
     private void updateBalanceDisplay() {
         if (ProdManController.product != null) {
-            lblBalance.setText(String.format("₱ %,.2f", (double) ProdManController.product.getBalance()));
+            lblBalance.setText(String.format("%s %,.2f", getCurrencySymbol(), (double) ProdManController.product.getBalance()));
         } else {
             lblBalance.setText("₱ 0.00");
         }
@@ -60,7 +77,7 @@ public class CustomerController implements Initializable {
             ProductService.getService().update(ProdManController.product);
 
             updateBalanceDisplay();
-            showNotification(Alert.AlertType.INFORMATION, "Transaction Successful", String.format("Successfully deposited ₱%,.2f", amount));
+            showNotification(Alert.AlertType.INFORMATION, "Transaction Successful", String.format("Successfully deposited %s%,.2f", getCurrencySymbol(), amount));
             tfAmount.clear();
 
         } catch (NumberFormatException e) {
@@ -95,7 +112,7 @@ public class CustomerController implements Initializable {
             ProductService.getService().update(ProdManController.product);
 
             updateBalanceDisplay();
-            showNotification(Alert.AlertType.INFORMATION, "Transaction Successful", String.format("Successfully withdrew ₱%,.2f", amount));
+            showNotification(Alert.AlertType.INFORMATION, "Transaction Successful", String.format("Successfully withdrew %s%,.2f", getCurrencySymbol(), amount));
             tfAmount.clear();
 
         } catch (NumberFormatException e) {

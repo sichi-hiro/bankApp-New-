@@ -1,10 +1,8 @@
-/* --- GLOBAL TYPOGRAPHY & OFF-WHITE BACKGROUND --- */
 .root {
     -fx-font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-    -fx-background-color: #f0f4f8; /* Premium, highly visible soft blue-gray */
+    -fx-background-color: #f0f4f8;
 }
 
-/* --- MODERN TEXT FIELDS & COMBOBOXES --- */
 .text-field, .combo-box {
     -fx-background-color: #ffffff;
     -fx-border-color: #cbd5e1;
@@ -16,14 +14,12 @@
     -fx-prompt-text-fill: #94a3b8;
 }
 
-/* The Professional "Glow" Focus Ring */
 .text-field:focused, .combo-box:focused {
     -fx-border-color: #1b6b80;
     -fx-background-color: #ffffff;
     -fx-effect: dropshadow(three-pass-box, rgba(27, 107, 128, 0.3), 8, 0, 0, 0) !important;
 }
 
-/* --- BASE BUTTONS (Ghost/Outline Style) --- */
 .button {
     -fx-background-color: transparent;
     -fx-text-fill: #1b6b80;
@@ -44,34 +40,31 @@
 .button:pressed {
     -fx-background-color: #d0e5eb;
     -fx-effect: none;
-    -fx-translate-y: 1px; /* Satisfying physical click effect */
+    -fx-translate-y: 1px;
 }
 
-/* --- FLAT PRIMARY BUTTONS --- */
 .button-primary {
     -fx-background-color: #1b6b80;
     -fx-text-fill: #ffffff;
     -fx-border-color: transparent;
-    -fx-effect: none; /* Gradient and shadow removed */
+    -fx-effect: none;
 }
 
 .button-primary:hover {
     -fx-background-color: #145060;
 }
 
-/* --- FLAT DESTRUCTIVE BUTTONS --- */
 .button-danger {
     -fx-background-color: #e03131;
     -fx-text-fill: #ffffff;
     -fx-border-color: transparent;
-    -fx-effect: none; /* Gradient and shadow removed */
+    -fx-effect: none;
 }
 
 .button-danger:hover {
     -fx-background-color: #c92a2a;
 }
 
-/* --- ACCOUNTS DIRECTORY (Sidebar List) --- */
 #lvProducts {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
@@ -100,7 +93,6 @@
     -fx-background-radius: 4px;
 }
 
-/* --- CUSTOM MODERN SCROLLBARS --- */
 .scroll-bar:vertical, .scroll-bar:horizontal {
     -fx-background-color: transparent;
 }
@@ -122,7 +114,6 @@
     -fx-padding: 0;
 }
 
-/* --- FLAT MENU BAR --- */
 .menu-bar {
     -fx-background-color: #ffffff;
     -fx-border-color: #e2e8f0;
@@ -137,7 +128,6 @@
     -fx-font-weight: 600;
 }
 
-/* --- COMBOBOX DROPDOWN FIX --- */
 .combo-box-popup .list-view {
     -fx-background-color: #ffffff;
     -fx-border-color: #cbd5e1;
@@ -167,21 +157,16 @@
     -fx-font-weight: bold;
 }
 
-/* --- COMBOBOX "BOX-INSIDE-A-BOX" FIX --- */
-/* Makes the inner text area transparent so it blends perfectly with the outer border */
 .combo-box > .list-cell {
     -fx-background-color: transparent;
     -fx-padding: 0;
 }
 
-/* Cleans up the dropdown arrow button */
 .combo-box .arrow-button {
     -fx-background-color: transparent;
     -fx-padding: 0 5px;
 }
 
-/* --- FIX TRUNCATED BUTTON TEXT --- */
-/* Overrides the FXML's 180px width so "Register & Open Account" fits perfectly */
 #btnSubmit {
     -fx-min-width: 210px;
 }
