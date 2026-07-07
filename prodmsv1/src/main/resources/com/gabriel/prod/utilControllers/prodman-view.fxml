@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="prodman" prefHeight="575.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.ProdManController">
+<BorderPane fx:id="prodman" prefHeight="575.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.ProdManController">
 
     <top>
         <MenuBar>
             <menus>
                 <Menu text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Log Out" accelerator="Shortcut+L" />
+                        <MenuItem accelerator="Shortcut+L" mnemonicParsing="false" onAction="#onLogout" text="Log Out" />
                     </items>
                 </Menu>
                 <Menu text="Edit">
                     <items>
-                        <MenuItem fx:id="menuOpenAccount" mnemonicParsing="false" onAction="#onOpenAccountMenuItem" text="Open Account" accelerator="Shortcut+N" />
-                        <MenuItem fx:id="menuEditAccount" mnemonicParsing="false" onAction="#onEditAccountMenuItem" text="Edit Account" accelerator="Shortcut+E" />
-                        <MenuItem fx:id="menuCloseAccount" mnemonicParsing="false" onAction="#onCloseAccountMenuItem" text="Close Account" accelerator="Shortcut+R" />
+                        <MenuItem fx:id="menuOpenAccount" accelerator="Shortcut+N" mnemonicParsing="false" onAction="#onOpenAccountMenuItem" text="Open Account" />
+                        <MenuItem fx:id="menuEditAccount" accelerator="Shortcut+E" mnemonicParsing="false" onAction="#onEditAccountMenuItem" text="Edit Account" />
+                        <MenuItem fx:id="menuCloseAccount" accelerator="Shortcut+R" mnemonicParsing="false" onAction="#onCloseAccountMenuItem" text="Close Account" />
                     </items>
                 </Menu>
                 <Menu text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onAboutMenuItem" text="About Banking App" accelerator="Shortcut+I" />
+                        <MenuItem accelerator="Shortcut+I" mnemonicParsing="false" onAction="#onAboutMenuItem" text="About Banking App" />
                     </items>
                 </Menu>
             </menus>
@@ -34,10 +46,13 @@
     <left>
         <VBox spacing="15.0" style="-fx-background-color: #1b6b80; -fx-padding: 25px 20px 25px 20px;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="120.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../images/ItemSpecifications.png" />
+                        <Image url="@../../../../images/bank.png" />
                     </image>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="35.0" top="10.0" />
+               </VBox.margin>
                 </ImageView>
                 <Label style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #ffffff;" text="Accounts Directory" />
                 <ListView fx:id="lvProducts" onMouseClicked="#onMouseClicked" prefHeight="310.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
@@ -89,10 +104,10 @@
 
                 <HBox alignment="CENTER" spacing="12.0">
                     <children>
-                        <Button fx:id="createButton" styleClass="button-primary" mnemonicParsing="false" onAction="#onCreate" prefWidth="135.0" text="Open Account" />
-                        <Button fx:id="updateButton" styleClass="button-primary" mnemonicParsing="false" onAction="#onUpdate" prefWidth="135.0" text="Edit Account" />
-                        <Button fx:id="deleteButton" styleClass="button-danger" onAction="#onDelete" prefWidth="135.0" text="Close Account" />
-                        <Button fx:id="closeButton" onAction="#onClose" prefWidth="90.0" text="Close" />
+                        <Button fx:id="createButton" mnemonicParsing="false" onAction="#onCreate" prefWidth="135.0" styleClass="button-primary" text="Open Account" />
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#onUpdate" prefWidth="135.0" styleClass="button-primary" text="Edit Account" />
+                        <Button fx:id="deleteButton" onAction="#onDelete" prefWidth="135.0" styleClass="button-danger" text="Close Account" />
+                        <Button fx:id="closeButton" onAction="#onClose" prefWidth="90.0" text="Exit" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="5.0" top="10.0" />

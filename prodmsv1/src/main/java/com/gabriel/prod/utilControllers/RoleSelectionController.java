@@ -21,7 +21,7 @@ public class RoleSelectionController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("prodman-view.fxml"));
             Parent root = fxmlLoader.load();
 
-            Scene scene = new Scene(root, 720, 575);
+            Scene scene = new Scene(root, 800, 575);
             scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
 
             stage.setTitle("Bank Application - Administration Console");
