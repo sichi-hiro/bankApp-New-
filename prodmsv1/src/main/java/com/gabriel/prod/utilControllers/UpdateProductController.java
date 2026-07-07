@@ -85,7 +85,7 @@ public class UpdateProductController implements Initializable {
         // Seamlessly switch back without using window.hide() to prevent accidental shutdown exits
         if (stage != null && parentScene != null) {
             stage.setScene(parentScene);
-            stage.setTitle("Apex Trust Bank - Administration Console");
+            stage.setTitle("Bank Application - Administration Console");
         }
     }
 }

@@ -60,7 +60,7 @@ public class CustomerLoginController {
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                stage.setTitle("Banking App - Customer: " + matchedAccount.getName() + " (#" + lookupId + ")");
+                stage.setTitle("Bank Application - Customer: " + matchedAccount.getName() + " (#" + lookupId + ")");
                 stage.setScene(scene);
                 stage.show();
             } else {
@@ -85,7 +85,7 @@ public class CustomerLoginController {
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            stage.setTitle("Banking App - Access Portal");
+            stage.setTitle("Bank Application - Access Portal");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

@@ -9,7 +9,7 @@
 
         <VBox alignment="CENTER" spacing="5.0">
             <children>
-                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1b6b80;" text="Banking App" />
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1b6b80;" text="Bank Application" />
                 <Label style="-fx-font-size: 14px; -fx-text-fill: #495057;" text="Please choose your access portal to continue" />
             </children>
         </VBox>

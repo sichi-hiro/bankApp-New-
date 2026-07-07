@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -38,7 +39,6 @@ public class CustomerController implements Initializable {
             lblBalance.setText("₱ 0.00");
         }
     }
-
 
     @FXML
     public void onDeposit(ActionEvent event) {
@@ -108,7 +108,14 @@ public class CustomerController implements Initializable {
     @FXML
     public void onLogout(ActionEvent event) {
         try {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Stage stage;
+            if (event.getSource() instanceof Node) {
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            } else if (event.getSource() instanceof MenuItem) {
+                stage = (Stage) btnLogout.getScene().getWindow();
+            } else {
+                return;
+            }
 
             URL resourceUrl = getClass().getResource("role-selection.fxml");
             if (resourceUrl == null) {
@@ -123,13 +130,40 @@ public class CustomerController implements Initializable {
                 scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
             }
 
-            stage.setTitle("Banking App - Role Selection Portal");
+            stage.setTitle("Bank Application - Role Selection Portal");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
             System.out.println("Error navigating back to login: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void onDepositMenuItem(ActionEvent event) {
+        onDeposit(new ActionEvent(btnDeposit, btnDeposit));
+    }
+
+    @FXML
+    public void onWithdrawMenuItem(ActionEvent event) {
+        onWithdraw(new ActionEvent(btnWithdraw, btnWithdraw));
+    }
+
+    @FXML
+    public void onAboutMenuItem(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("Bank Application");
+        alert.setContentText("This is a Product Management Application template developed by Rijai Consulting, modified into a Bank Application.\n\n"
+                + "Modified by:\n"
+                + "• Marc Dei Niel Bides\n"
+                + "• Chloie May Broñola\n"
+                + "• Naveen Pablo\n"
+                + "• Karl Evlan Robasto");
+        alert.getDialogPane().setMinHeight(javafx.scene.layout.Region.USE_PREF_SIZE);
+        alert.getDialogPane().setMinWidth(480.0);
+
+        alert.showAndWait();
     }
 
     private void showNotification(Alert.AlertType type, String title, String message) {

@@ -43,7 +43,7 @@ public class DeleteProductController {
     public void onBack(ActionEvent event) {
         if (stage != null && parentScene != null) {
             stage.setScene(parentScene);
-            stage.setTitle("Apex Trust Bank - Administration Console");
+            stage.setTitle("Bank Application - Administration Console");
         }
     }
 }

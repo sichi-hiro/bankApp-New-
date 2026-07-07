@@ -77,7 +77,7 @@ public class CreateProductController implements Initializable {
         System.out.println("CreateProductController:onBack");
         if (stage != null && parentScene != null) {
             stage.setScene(parentScene);
-            stage.setTitle("Apex Trust Bank - Administration Console");
+            stage.setTitle("Bank Application - Administration Console");
         }
     }
 

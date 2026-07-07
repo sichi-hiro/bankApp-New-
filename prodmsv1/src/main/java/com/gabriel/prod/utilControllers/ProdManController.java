@@ -112,7 +112,6 @@ public class ProdManController implements Initializable {
         tfName.setText("");
         tfDesc.setText("");
         tfUom.setText("");
-        // Added clean reset loop parameters
         tfBalance.setText("");
     }
 
@@ -272,8 +271,16 @@ public class ProdManController implements Initializable {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
-        alert.setHeaderText("Product Management System");
-        alert.setContentText("This is a Product Management Application template developed by Rijai Consulting.\n\nModified by Chloie Broñola");
+        alert.setHeaderText("Bank Application");
+        alert.setContentText("This is a Product Management Application template developed by Rijai Consulting, modified into a Banking Application.\n\n"
+                + "Modified by:\n"
+                + "• Marc Dei Niel Bides\n"
+                + "• Chloie May Broñola\n"
+                + "• Naveen Pablo\n"
+                + "• Karl Evlan Robasto");
+
+        alert.getDialogPane().setMinHeight(javafx.scene.layout.Region.USE_PREF_SIZE);
+        alert.getDialogPane().setMinWidth(480.0);
 
         alert.showAndWait();
     }
@@ -297,18 +304,49 @@ public class ProdManController implements Initializable {
                 }
 
                 if (this.stage == null) {
-                    this.stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    if (actionEvent.getSource() instanceof Node) {
+                        this.stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    } else if (actionEvent.getSource() instanceof MenuItem) {
+                        this.stage = (Stage) prodman.getScene().getWindow();
+                    }
                 }
 
-                this.stage.setTitle("Banking App - Role Selection Portal");
-                this.stage.setScene(roleSelectionScene);
-                this.stage.show();
+                if (this.stage != null) {
+                    this.stage.setTitle("Banking App - Role Selection Portal");
+                    this.stage.setScene(roleSelectionScene);
+                    this.stage.show();
+                }
 
             } catch (Exception ex) {
                 System.out.println("Error navigating back to Role Selection: " + ex.getMessage());
                 ex.printStackTrace();
             }
         }
+    }
+
+    @FXML
+    public void onLogout(ActionEvent actionEvent) {
+        onClose(actionEvent);
+    }
+
+    @FXML
+    public void onOpenAccountMenuItem(ActionEvent event) {
+        onCreate(event);
+    }
+
+    @FXML
+    public void onEditAccountMenuItem(ActionEvent event) {
+        onUpdate(event);
+    }
+
+    @FXML
+    public void onCloseAccountMenuItem(ActionEvent event) {
+        onDelete(event);
+    }
+
+    @FXML
+    public void onAboutMenuItem(ActionEvent event) {
+        onAbout(event);
     }
 
     void showErrorDialog(String message){

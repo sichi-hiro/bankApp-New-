@@ -50,7 +50,7 @@ public class SplashController implements Initializable {
             Scene scene = new Scene(root, 600, 400);
             scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
 
-            currentStage.setTitle("Apex Trust Bank - Access Portal");
+            currentStage.setTitle("Bank Application - Access Portal");
             currentStage.setScene(scene);
             currentStage.show();
         } catch (Exception ex) {

@@ -19,7 +19,7 @@ public class SplashApp extends Application {
         Scene scene = new Scene(root, 600, 400);
         scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
 
-        stage.setTitle("Apex Trust Bank - Access Portal");
+        stage.setTitle("Bank Application");
         stage.setScene(scene);
         stage.show();
     }

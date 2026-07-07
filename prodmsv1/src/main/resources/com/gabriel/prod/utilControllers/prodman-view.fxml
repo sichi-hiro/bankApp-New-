@@ -8,24 +8,23 @@
 <BorderPane fx:id="prodman" prefHeight="575.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.ProdManController">
 
     <top>
-        <MenuBar BorderPane.alignment="CENTER">
+        <MenuBar>
             <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onCreate" text="Open Account" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit System" />
+                        <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Log Out" accelerator="Shortcut+L" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onUpdate" text="Edit Account" />
-                        <MenuItem mnemonicParsing="false" onAction="#onDelete" text="Close Account" />
+                        <MenuItem fx:id="menuOpenAccount" mnemonicParsing="false" onAction="#onOpenAccountMenuItem" text="Open Account" accelerator="Shortcut+N" />
+                        <MenuItem fx:id="menuEditAccount" mnemonicParsing="false" onAction="#onEditAccountMenuItem" text="Edit Account" accelerator="Shortcut+E" />
+                        <MenuItem fx:id="menuCloseAccount" mnemonicParsing="false" onAction="#onCloseAccountMenuItem" text="Close Account" accelerator="Shortcut+R" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onAbout" text="About" />
+                        <MenuItem mnemonicParsing="false" onAction="#onAboutMenuItem" text="About Banking App" accelerator="Shortcut+I" />
                     </items>
                 </Menu>
             </menus>

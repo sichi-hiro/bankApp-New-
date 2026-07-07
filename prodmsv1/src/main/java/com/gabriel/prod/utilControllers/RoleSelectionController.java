@@ -24,7 +24,7 @@ public class RoleSelectionController {
             Scene scene = new Scene(root, 720, 575);
             scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
 
-            stage.setTitle("Apex Trust Bank - Administration Console");
+            stage.setTitle("Bank Application - Administration Console");
             stage.setScene(scene);
             stage.show();
 
@@ -46,7 +46,7 @@ public class RoleSelectionController {
             Scene scene = new Scene(root, 600, 450);
             scene.getStylesheets().add(getClass().getResource("/css/splash.css").toExternalForm());
 
-            stage.setTitle("Apex Trust Bank - Customer Identification");
+            stage.setTitle("Bank Application - Customer Identification");
             stage.setScene(scene);
             stage.show();
 
