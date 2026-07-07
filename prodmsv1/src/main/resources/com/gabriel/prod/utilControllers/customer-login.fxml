@@ -18,8 +18,7 @@
     <center>
         <StackPane BorderPane.alignment="CENTER">
             <children>
-                <VBox alignment="CENTER" maxWidth="400.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #ffffff; -fx-background-radius: 8px; -fx-border-color: #e9ecef; -fx-border-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
-                    <padding>
+                <VBox alignment="CENTER" maxWidth="400.0" prefWidth="400.0" spacing="25.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12px; -fx-border-color: #f1f3f5; -fx-border-radius: 12px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.04), 20, 0, 0, 8);">                    <padding>
                         <Insets bottom="40.0" left="30.0" right="30.0" top="40.0" />
                     </padding>
                     <children>

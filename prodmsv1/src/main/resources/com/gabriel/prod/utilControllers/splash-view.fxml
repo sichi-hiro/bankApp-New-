@@ -7,7 +7,7 @@
 <BorderPane prefHeight="550.0" prefWidth="720.0" style="-fx-background-color: #f5ebeb;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.prod.utilControllers.SplashController">
 
     <top>
-        <VBox alignment="CENTER" prefHeight="220.0" style="-fx-background-color: #c2255c; -fx-padding: 30px 20px 0px 20px;" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="220.0" style="-fx-background-color: #1b6b80; -fx-padding: 30px 20px 0px 20px;" BorderPane.alignment="CENTER">
             <children>
                 <Label style="-fx-font-size: 32px; -fx-font-weight: 900; -fx-text-fill: #ffffff; -fx-letter-spacing: 1px;" text="APEX TRUST BANK" />
                 <Label style="-fx-font-size: 14px; -fx-text-fill: #fff0f6; -fx-margin-top: 5px;" text="Secure. Reliable. Innovative Corporate Systems." />

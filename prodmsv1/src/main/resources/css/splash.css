@@ -1,75 +1,194 @@
+/* --- GLOBAL TYPOGRAPHY & OFF-WHITE BACKGROUND --- */
 .root {
-    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    -fx-background-color: #f0f4f8; /* Premium, highly visible soft blue-gray */
 }
 
-/* --- TEXT FIELDS --- */
-.text-field {
+/* --- MODERN TEXT FIELDS & COMBOBOXES --- */
+.text-field, .combo-box {
     -fx-background-color: #ffffff;
-    -fx-border-color: #dee2e6;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
-    -fx-padding: 6px 10px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1e293b;
+    -fx-prompt-text-fill: #94a3b8;
 }
 
-.text-field:focused {
-    /* CHANGED: Swapped out pink focus border for the brand Deep Teal */
+/* The Professional "Glow" Focus Ring */
+.text-field:focused, .combo-box:focused {
     -fx-border-color: #1b6b80;
-}
-
-/* --- TEXT AREAS --- */
-.text-area {
-    -fx-background-color: transparent;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
-}
-
-.text-area .viewport,
-.text-area .content {
-    -fx-background-color: transparent !important;
-}
-
-/* --- BASE/CANCEL BUTTONS --- */
-.button {
     -fx-background-color: #ffffff;
-    -fx-text-fill: #495057;
-    -fx-border-color: #dee2e6;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
-    -fx-font-weight: bold;
-    -fx-padding: 6px 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(27, 107, 128, 0.3), 8, 0, 0, 0) !important;
+}
+
+/* --- BASE BUTTONS (Ghost/Outline Style) --- */
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1b6b80;
+    -fx-border-color: #1b6b80;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-border-width: 1.5px;
+    -fx-font-weight: 700;
+    -fx-padding: 10px 20px;
     -fx-cursor: hand;
 }
 
 .button:hover {
-    /* CHANGED: Swapped out pink text and background for modern soft teal accents */
     -fx-background-color: #e8f2f5;
-    -fx-border-color: #1b6b80;
-    -fx-text-fill: #1b6b80;
+    -fx-effect: dropshadow(three-pass-box, rgba(27, 107, 128, 0.15), 5, 0, 0, 2);
 }
 
-/* --- TOP MENU NAVIGATION BAR --- */
-.menu-bar {
-    -fx-background-color: #f8f9fa;
-    -fx-border-color: #dee2e6;
+.button:pressed {
+    -fx-background-color: #d0e5eb;
+    -fx-effect: none;
+    -fx-translate-y: 1px; /* Satisfying physical click effect */
+}
+
+/* --- PRIMARY ACTION BUTTONS (Soft Premium Shadows) --- */
+.button-primary {
+    -fx-background-color: linear-gradient(to bottom right, #1b6b80, #145060);
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(20, 80, 96, 0.25), 8, 0, 0, 3);
+}
+
+.button-primary:hover {
+    -fx-background-color: linear-gradient(to bottom right, #1f7b94, #1b6b80);
+    -fx-effect: dropshadow(three-pass-box, rgba(20, 80, 96, 0.35), 12, 0, 0, 5);
+}
+
+.button-primary:pressed {
+    -fx-effect: dropshadow(three-pass-box, rgba(20, 80, 96, 0.15), 4, 0, 0, 1);
+    -fx-translate-y: 2px;
+}
+
+/* --- DESTRUCTIVE ACTION BUTTONS (Clean Reds) --- */
+.button-danger {
+    -fx-background-color: linear-gradient(to bottom right, #f03e3e, #c92a2a);
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(201, 42, 42, 0.4), 10, 0, 0, 4);
+}
+
+.button-danger:hover {
+    -fx-background-color: linear-gradient(to bottom right, #fa5252, #e03131);
+    -fx-effect: dropshadow(three-pass-box, rgba(201, 42, 42, 0.5), 15, 0, 0, 6);
+}
+
+/* --- ACCOUNTS DIRECTORY (Sidebar List) --- */
+#lvProducts {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#lvProducts .list-cell,
+#lvProducts .list-cell:filled,
+#lvProducts .list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 12px 15px;
+    -fx-font-size: 14px;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
     -fx-border-width: 0 0 1px 0;
 }
 
-.menu-bar .label {
-    -fx-text-fill: #495057;
-    -fx-font-size: 12px;
+#lvProducts .list-cell:filled:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-cursor: hand;
 }
 
-.menu .menu-item:hover,
-.menu:hover {
-    /* CHANGED: Swapped drop list hovering styles from pink to premium brand teal */
+#lvProducts .list-cell:filled:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1b6b80;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+}
+
+/* --- CUSTOM MODERN SCROLLBARS --- */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #94a3b8;
+    -fx-background-radius: 8px;
+}
+
+.scroll-bar:vertical .thumb:hover, .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #64748b;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-padding: 0;
+}
+
+/* --- FLAT MENU BAR --- */
+.menu-bar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 6px 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.02), 4, 0, 0, 2);
+}
+
+.menu-bar .label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+/* --- COMBOBOX DROPDOWN FIX --- */
+.combo-box-popup .list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-padding: 0;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1e293b;
+    -fx-font-weight: normal;
+    -fx-padding: 8px 12px;
+    -fx-border-width: 0;
+}
+
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #f0f4f8;
+    -fx-text-fill: #1b6b80;
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-cell:filled:selected {
     -fx-background-color: #e8f2f5;
     -fx-text-fill: #1b6b80;
+    -fx-font-weight: bold;
 }
 
-/* --- DROPDOWN CONTEXT MENUS --- */
-.context-menu {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #dee2e6;
-    -fx-background-radius: 4px;
-    -fx-border-radius: 4px;
+/* --- COMBOBOX "BOX-INSIDE-A-BOX" FIX --- */
+/* Makes the inner text area transparent so it blends perfectly with the outer border */
+.combo-box > .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* Cleans up the dropdown arrow button */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 5px;
+}
+
+/* --- FIX TRUNCATED BUTTON TEXT --- */
+/* Overrides the FXML's 180px width so "Register & Open Account" fits perfectly */
+#btnSubmit {
+    -fx-min-width: 210px;
 }
