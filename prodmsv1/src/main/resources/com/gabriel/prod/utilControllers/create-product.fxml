@@ -9,8 +9,8 @@
     <top>
         <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #1b6b80;" BorderPane.alignment="CENTER">
             <children>
-                <Label style="-fx-font-size: 24px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANKING APP" />
-                <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Administrative Registry - Open New Customer Account" />
+                <Label style="-fx-font-size: 24px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANK APPLICATION" />
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Open New Customer Account" />
             </children>
         </VBox>
     </top>
@@ -23,7 +23,7 @@
                         <Insets bottom="35.0" left="30.0" right="30.0" top="35.0" />
                     </padding>
                     <children>
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #495057;" text="Account Registration Dossier" />
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #495057;" text="Account Registration" />
 
                         <VBox spacing="6.0">
                             <children>
@@ -34,7 +34,7 @@
 
                         <VBox spacing="6.0">
                             <children>
-                                <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #6c757d;" text="ACCOUNT CURRENCY SYSTEM STRUCTURE (UOM)" />
+                                <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #6c757d;" text="ACCOUNT CURRENCY" />
                                 <ComboBox fx:id="cbUom" prefHeight="38.0" prefWidth="440.0" promptText="Select Currency Profile..." style="-fx-font-size: 14px;" />
                             </children>
                         </VBox>
