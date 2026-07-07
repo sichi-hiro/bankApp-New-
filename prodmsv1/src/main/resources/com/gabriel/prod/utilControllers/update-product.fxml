@@ -8,7 +8,7 @@
     <top>
         <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #1b6b80;" BorderPane.alignment="CENTER">
             <children>
-                <Label style="-fx-font-size: 24px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANKING APP" />
+                <Label style="-fx-font-size: 24px; -fx-font-weight: 900; -fx-text-fill: #ffffff;" text="BANK APPLICATION" />
                 <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Modify Account Details" />
             </children>
         </VBox>
