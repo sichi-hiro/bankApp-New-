@@ -39,7 +39,7 @@
                         <VBox>
                             <children>
                                 <Label style="-fx-font-size: 22px; -fx-font-weight: 900; -fx-text-fill: #ffffff; -fx-letter-spacing: 1px;" text="BANK APPLICATION" />
-                                <Label style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Customer Transaction" />
+                                <Label fx:id="lblWelcome" style="-fx-font-size: 13px; -fx-text-fill: #e8f2f5;" text="Customer Transaction" />
                             </children>
                         </VBox>
                     </children>

@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 public class CustomerController implements Initializable {
 
     @FXML private Label lblBalance;
+    @FXML private Label lblWelcome; // Tied directly to fx:id="lblWelcome" in FXML
     @FXML private TextField tfAmount;
     @FXML private Button btnDeposit;
     @FXML private Button btnWithdraw;
@@ -29,6 +30,13 @@ public class CustomerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Dynamically set personalized greeting banner text
+        if (ProdManController.product != null) {
+            lblWelcome.setText("Welcome back, " + ProdManController.product.getName() + "!");
+        } else {
+            lblWelcome.setText("Customer Transaction Terminal");
+        }
+
         updateBalanceDisplay();
     }
 
